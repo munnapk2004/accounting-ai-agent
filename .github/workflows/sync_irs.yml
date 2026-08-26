@@ -1,0 +1,35 @@
+name: Sync IRS Publications
+
+on:
+  schedule:
+    - cron: '0 3 * * 0' # Every Sunday at 3:00 AM
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Fetch IRS Publications
+        run: python fetch_irs.py
+
+      - name: Commit and Push IRS Updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update IRS Publications knowledge base"
+          file_pattern: "knowledge_base/irs_*.txt"
