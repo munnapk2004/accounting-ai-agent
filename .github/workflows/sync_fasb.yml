@@ -3,16 +3,16 @@ name: Sync FASB Standards
 on:
   schedule:
     - cron: '0 0 * * 0' # Runs automatically every Sunday at midnight
-  workflow_dispatch: # Allows manual trigger from GitHub anytime
+  workflow_dispatch: # Allows manual trigger from GitHub UI
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Explicitly grants repository write access to this job
     steps:
-      # Updated to v4 to fix Node deprecation
       - uses: actions/checkout@v4
       
-      # Updated to v5 to fix Node deprecation
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
