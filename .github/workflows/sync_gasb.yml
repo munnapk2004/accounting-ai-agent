@@ -1,0 +1,35 @@
+name: Sync GASB Standards
+
+on:
+  schedule:
+    - cron: '0 1 * * 0' # Every Sunday at 1:00 AM (1 hour after FASB sync)
+  workflow_dispatch: # Allows manual trigger anytime from Actions tab
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants write permissions to commit changes
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: pip install requests
+
+      - name: Fetch GASB Data
+        run: python fetch_gasb.py
+
+      - name: Commit and Push GASB Updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update GASB knowledge base"
+          file_pattern: "knowledge_base/gasb_updates.txt"
