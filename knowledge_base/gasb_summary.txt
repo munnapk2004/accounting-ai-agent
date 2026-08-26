@@ -1,1 +1,22 @@
+=== GASB CORE STANDARDS & GOVERNMENTAL ACCOUNTING PRINCIPLES ===
 
+--- FUND ACCOUNTING & MEASUREMENT FOCUS ---
+1. Governmental Funds (Modified Accrual / Current Financial Resources Focus):
+   - General Fund, Special Revenue Funds, Capital Projects Funds, Debt Service Funds, Permanent Funds.
+   - Revenue Recognition: Measurable and Available (collectible within current period or soon enough thereafter, typically 60 days for property taxes).
+2. Proprietary Funds (Full Accrual / Economic Resources Focus):
+   - Enterprise Funds (e.g., municipal utilities) and Internal Service Funds.
+3. Fiduciary Funds (Full Accrual Focus):
+   - Pension Trust, Investment Trust, Private-Purpose Trust, Custodial Funds.
+
+--- LEASES & SBITAs (GASB 87 & GASB 96) ---
+- GASB 87 (Leases): Eliminates operating/capital lease distinction for lessees. Lessees recognize an Intangible Right-to-Use Asset and Lease Liability for all contracts > 12 months.
+- GASB 96 (Subscription-Based Information Technology Arrangements - SBITAs): Applies GASB 87 treatment to cloud computing and software-as-a-service (SaaS) contracts in public sector entities.
+
+--- FINANCIAL REPORTING MODEL (GASB Statement No. 34) ---
+- Dual-Perspective Reporting: Requires both Government-Wide Financial Statements (full accrual, economic resources) and Fund Financial Statements (modified accrual for governmental funds).
+- MD&A: Management’s Discussion and Analysis required as Supplementary Information (RSI).
+- Reconciliation: Requires formal reconciliation between governmental fund balance sheets/net changes and government-wide Net Position/Activities.
+
+--- PENSIONS & OPEB (GASB 68 & GASB 75) ---
+- Net Pension Liability (NPL) and Total OPEB Liability recorded directly on the Statement of Net Position for cost-sharing and single-employer plans.
