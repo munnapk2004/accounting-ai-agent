@@ -5,6 +5,5 @@ langchain-google-genai
 chromadb
 sentence-transformers
 pypdf
-unstructured
 pandas
 requests
